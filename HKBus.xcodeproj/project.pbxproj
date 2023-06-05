@@ -12,6 +12,8 @@
 		428CA0AA2A2E10E600A1C517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428CA0A92A2E10E600A1C517 /* Assets.xcassets */; };
 		428CA0AD2A2E10E600A1C517 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428CA0AC2A2E10E600A1C517 /* Preview Assets.xcassets */; };
 		428CA0B62A2E115E00A1C517 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CA0B52A2E115E00A1C517 /* HomepageView.swift */; };
+		428CA0BE2A2E161300A1C517 /* BuwListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CA0BD2A2E161300A1C517 /* BuwListRow.swift */; };
+		428CA0C42A2E18E300A1C517 /* RouteDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CA0C32A2E18E300A1C517 /* RouteDetailPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		428CA0A92A2E10E600A1C517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		428CA0AC2A2E10E600A1C517 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		428CA0B52A2E115E00A1C517 /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
+		428CA0BD2A2E161300A1C517 /* BuwListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuwListRow.swift; sourceTree = "<group>"; };
+		428CA0C32A2E18E300A1C517 /* RouteDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		428CA0B32A2E114C00A1C517 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				428CA0C22A2E18D500A1C517 /* RouteDetail */,
+				428CA0BC2A2E15FC00A1C517 /* Componment */,
 				428CA0B42A2E115300A1C517 /* Home */,
 			);
 			path = Screen;
@@ -84,6 +90,22 @@
 				428CA0B52A2E115E00A1C517 /* HomepageView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		428CA0BC2A2E15FC00A1C517 /* Componment */ = {
+			isa = PBXGroup;
+			children = (
+				428CA0BD2A2E161300A1C517 /* BuwListRow.swift */,
+			);
+			path = Componment;
+			sourceTree = "<group>";
+		};
+		428CA0C22A2E18D500A1C517 /* RouteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				428CA0C32A2E18E300A1C517 /* RouteDetailPage.swift */,
+			);
+			path = RouteDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +178,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428CA0C42A2E18E300A1C517 /* RouteDetailPage.swift in Sources */,
 				428CA0B62A2E115E00A1C517 /* HomepageView.swift in Sources */,
+				428CA0BE2A2E161300A1C517 /* BuwListRow.swift in Sources */,
 				428CA0A82A2E10E500A1C517 /* AppEntryView.swift in Sources */,
 				428CA0A62A2E10E500A1C517 /* HKBusApp.swift in Sources */,
 			);
