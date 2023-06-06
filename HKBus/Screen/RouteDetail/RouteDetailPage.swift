@@ -8,12 +8,34 @@
 import SwiftUI
 import MapKit
 
+enum Tab : String , View, CaseIterable, Identifiable {
+    
+    case ETA = "到站時間", TravelTime = "車程", Timetable = "時間表"
+    
+    @ViewBuilder var body : some View {
+        switch self {
+            case .ETA: ETAView()
+            case .TravelTime : TravelTimeView()
+            case .Timetable : TimetableView()
+            
+        }
+    }
+    
+    @ViewBuilder var tabBarItem : some View {
+        Text(self.rawValue)
+    }
+    
+    var id : Self { self }
+
+}
+
 struct RouteDetailPage: View {
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    var routeNumber: String
     
-    @State private var selectedIndex = -1
-    @State private var offsetY : CGFloat = 540
+    @State var tab : Tab = .ETA
+    
+  
     
     var body: some View {
         NavigationStack {
@@ -28,7 +50,7 @@ struct RouteDetailPage: View {
                     
                     VStack {
                         
-                        Text("1")
+                        Text(routeNumber)
                             .bold()
                             .font(.title2)
                         
@@ -51,122 +73,27 @@ struct RouteDetailPage: View {
                 .font(.body)
                 .padding(.horizontal)
                 
-                Picker(selection: .constant(true)) {
-                    Text("到站時間")
-                    Text("車程")
-                    Text("時間表")
-                    
-                } label: {
-                    
-                }
+                Picker( selection: $tab ) {
+                    ForEach(Tab.allCases) { $0.tabBarItem }
+                } label: {}
                 .pickerStyle(.segmented)
                 .padding()
 
-                
-                Map(coordinateRegion: $region, interactionModes: [.pan])
-                    .frame(width: 400, height: offsetY < 480 ? max(100 , (offsetY / 2)) : 300)
-                    
-                
                
-                
-                ScrollView {
-                   
-                    
-                    GeometryReader { proxy in
-                        let _ = offsetY = proxy.frame(in: .global).minY
-                        Color.clear
-                    }
-                    VStack {
-                        
-                       
-                           
-                       
-                        ForEach(1..<12) { id in
-                            Button { selectedIndex = id } label: {
-                                VStack(alignment: .leading) {
-                                    VStack {
-                                        HStack {
-                                            Text(id.formatted())
-                                            Text("竹園邨總站")
-                                        }
-                                        .bold()
-                                        .font(.title3)
-                                        
-                                        HStack {
-                                            Text("車資:")
-                                            Text("$6.2 ")
-                                        }
-                                    }.padding(.horizontal)
-                                    
-                                    if selectedIndex == id {
-                                        HStack {
-                                            VStack(alignment: .leading) {
-                                                HStack {
-                                                    Text("6")
-                                                        .bold()
-                                                        .padding(.horizontal , 12)
-                                                        .frame(width: 50, alignment: .trailing)
-                                                        .foregroundColor(.blue)
-                                                        .font(.title2)
-                                                    
-                                                    Text("分鐘")
-                                                    Text(" - 原定班次")
-                                                        
-                                                }
-                                                
-                                                HStack {
-                                                    Text("20")
-                                                        .bold()
-                                                        .padding(.horizontal , 12)
-                                                        .frame(width: 50, alignment: .trailing)
-                                                    
-                                                    Text("分鐘")
-                                                    Text(" - 原定班次")
-                                                        
-                                                }
-                                                
-                                                HStack {
-                                                    Text("39")
-                                                        .bold()
-                                                        .padding(.horizontal , 12)
-                                                        .frame(width: 50, alignment: .trailing)
-                                                    Text("分鐘")
-                                                    Text(" - 原定班次")
-                                                        
-                                                }
-                                            }
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                        }
-                                        .padding()
-                                        .frame(maxWidth: .infinity)
-                                        .background(Color(UIColor.secondarySystemBackground).ignoresSafeArea())
-                                    }
-                                    
-                                }
-                                .foregroundColor(Color(UIColor.label))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.vertical , 6)
-                            }
-                            
-                          
-                            Divider()
-                                
-                            
-                            
-                        }
-                    }
+                VStack {
+                    tab
                 }
-                .frame(maxWidth: .infinity)
-                .ignoresSafeArea()
-                .padding(.vertical)
+                
                 
                 
                 Spacer()
             }
+            .padding(.vertical , 1)
             .preferredColorScheme(.dark)
             .background()
             .navigationTitle("")
-        }
+            
+        }.padding(.vertical , 1)
         
     }
 }
@@ -174,8 +101,9 @@ struct RouteDetailPage: View {
 struct RouteDetailPage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            RouteDetailPage()
-                .environment(\.colorScheme, .dark)
+            RouteDetailPage(
+                routeNumber: "1"
+            ).environment(\.colorScheme, .dark)
         }
     }
 }

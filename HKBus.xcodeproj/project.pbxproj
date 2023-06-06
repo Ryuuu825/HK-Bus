@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426631D02A2F6DDD00D6E425 /* ETAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426631CF2A2F6DDD00D6E425 /* ETAView.swift */; };
+		426631D22A2F75CE00D6E425 /* TravelTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426631D12A2F75CE00D6E425 /* TravelTimeView.swift */; };
+		426631D42A2F821700D6E425 /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426631D32A2F821700D6E425 /* TimetableView.swift */; };
 		428CA0A62A2E10E500A1C517 /* HKBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CA0A52A2E10E500A1C517 /* HKBusApp.swift */; };
 		428CA0A82A2E10E500A1C517 /* AppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CA0A72A2E10E500A1C517 /* AppEntryView.swift */; };
 		428CA0AA2A2E10E600A1C517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428CA0A92A2E10E600A1C517 /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		426631CF2A2F6DDD00D6E425 /* ETAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETAView.swift; sourceTree = "<group>"; };
+		426631D12A2F75CE00D6E425 /* TravelTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeView.swift; sourceTree = "<group>"; };
+		426631D32A2F821700D6E425 /* TimetableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableView.swift; sourceTree = "<group>"; };
 		428CA0A22A2E10E500A1C517 /* HKBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		428CA0A52A2E10E500A1C517 /* HKBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKBusApp.swift; sourceTree = "<group>"; };
 		428CA0A72A2E10E500A1C517 /* AppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryView.swift; sourceTree = "<group>"; };
@@ -38,6 +44,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		426631CE2A2F6DB600D6E425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				426631CF2A2F6DDD00D6E425 /* ETAView.swift */,
+				426631D12A2F75CE00D6E425 /* TravelTimeView.swift */,
+				426631D32A2F821700D6E425 /* TimetableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		428CA0992A2E10E500A1C517 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +119,7 @@
 		428CA0C22A2E18D500A1C517 /* RouteDetail */ = {
 			isa = PBXGroup;
 			children = (
+				426631CE2A2F6DB600D6E425 /* View */,
 				428CA0C32A2E18E300A1C517 /* RouteDetailPage.swift */,
 			);
 			path = RouteDetail;
@@ -178,11 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426631D42A2F821700D6E425 /* TimetableView.swift in Sources */,
 				428CA0C42A2E18E300A1C517 /* RouteDetailPage.swift in Sources */,
 				428CA0B62A2E115E00A1C517 /* HomepageView.swift in Sources */,
 				428CA0BE2A2E161300A1C517 /* BuwListRow.swift in Sources */,
 				428CA0A82A2E10E500A1C517 /* AppEntryView.swift in Sources */,
+				426631D22A2F75CE00D6E425 /* TravelTimeView.swift in Sources */,
 				428CA0A62A2E10E500A1C517 /* HKBusApp.swift in Sources */,
+				426631D02A2F6DDD00D6E425 /* ETAView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
